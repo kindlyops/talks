@@ -1,0 +1,17 @@
+
+body:after {
+content: url(logo.png);
+position: fixed;
+bottom: 3.5em;
+left: 3.5em;
+ }
+
+
+/* 
+ body {
+    background-image: url(logo.png);
+    background-size: 20%;
+    background-repeat: no-repeat;
+    background-position: 3% 96%;
+}
+*/

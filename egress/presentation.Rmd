@@ -16,8 +16,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
-# TODO: I can't figure out why inverse is still applied to title slide
+options(htmltools.dir.version = FALSE)p
 ```
 ```{r xaringan-themer, include = FALSE}
 library(xaringanthemer)

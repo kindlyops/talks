@@ -1,38 +1,26 @@
----
-title: "<br>EGRESS"
-subtitle: "without cold start penalties"
-author: "Elliot Murphy"
-date: "2019/01/08 (updated: `r Sys.Date()`)"
-output:
-  xaringan::moon_reader:
-    lib_dir: libs
-    css: [xaringan-themer.css, kindlyops.css]
-    nature:
-      titleSlideClass: [center, middle, title-slide]
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
-      countdown: 120000
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> EGRESS</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Elliot Murphy" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="kindlyops.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, title-slide, title-slide
+
+# <br>EGRESS
+## without cold start penalties
+### Elliot Murphy
+### 2019/01/08 (updated: 2019-01-09)
+
 ---
 
-```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
-```
-```{r xaringan-themer, include = FALSE}
-library(xaringanthemer)
-mono_accent(
-  base_color = "#2fa09d",
-  background_image = "logo.png",
-  background_size = "150px",
-  background_position = "11% 97%",
-  title_slide_background_image = "lines.png",
-  title_slide_background_size = "40%",
-  title_slide_background_color = "#FFFFFF",
-  title_slide_background_position = "bottom -150px center",
-  title_slide_text_color = "#3F4145",
-  )
-# TODO: customize using the Haven GRC fonts
-```
+
+
+
 
 # GOALS
 
@@ -198,7 +186,7 @@ used a custom request header for proxy auth so we could leave the Authentication
 
 no measurable slowdown is a much better result than adding 10s to every cold start
 
-deployment to both ECS & Lambda is CodePipeline driving CloudFormation stack updates
+deployment to both ECS &amp; Lambda is CodePipeline driving CloudFormation stack updates
 
 ---
 
@@ -234,3 +222,96 @@ class: center, middle
 # "Tell me about the last bug you filed against your cloud provider."
 
   elliot@kindlyops.com
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();
+(function(time) {
+  var d2 = function(number) {
+    return ('0' + number).slice(-2); // left-pad 0 to minutes/seconds
+  },
+
+  time_format = function(total) {
+    var secs = Math.abs(total) / 1000;
+    var h = Math.floor(secs / 3600);
+    var m = Math.floor(secs % 3600 / 60);
+    var s = Math.round(secs % 60);
+    var res = d2(m) + ':' + d2(s);
+    if (h > 0) res = h + ':' + res;
+    return res;  // [hh:]mm:ss
+  },
+
+  slide_number_div = function(i) {
+    return document.getElementsByClassName('remark-slide-number').item(i);
+  },
+
+  current_page_number = function(i) {
+    return slide_number_div(i).firstChild.textContent;  // text "i / N"
+  };
+
+  var timer = document.createElement('span'); timer.id = 'slide-time-left';
+  var time_left = time, k = slideshow.getCurrentSlideIndex(),
+      last_page_number = current_page_number(k);
+
+  setInterval(function() {
+    time_left = time_left - 1000;
+    timer.innerHTML = ' ' + time_format(time_left);
+    if (time_left < 0) timer.style.color = 'red';
+  }, 1000);
+
+  slide_number_div(k).appendChild(timer);
+
+  slideshow.on('showSlide', function(slide) {
+    var i = slide.getSlideIndex(), n = current_page_number(i);
+    // reset timer when a new slide is shown and the page number is changed
+    if (last_page_number !== n) {
+      time_left = time; last_page_number = n;
+      timer.innerHTML = ' ' + time_format(time); timer.style.color = null;
+    }
+    slide_number_div(i).appendChild(timer);
+  });
+})(120000);</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

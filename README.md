@@ -1,7 +1,7 @@
 ### Talks
 
 - Serverless Egress without Cold Start (AWS Portsmouth User Group
-  - [Serverless Egress without Cold Start (slides)](/egress/presentation.html)
+  - [slides](/egress/presentation.html)
   - [![Video from AWS Portsmouth User Group](http://img.youtube.com/vi/KbCeAv0beAU/0.jpg)](https://www.youtube.com/watch?v=KbCeAv0beAU "Serverless Egress talk")
 - Redefining collaboration norms as your company grows (DevOpsDays Boston 2016 Keynote)   
   - [slides](/collaborationnorms/presentation.html)

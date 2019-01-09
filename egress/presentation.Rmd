@@ -96,7 +96,7 @@ Custom CloudFront, which connects to
 
 Regional API GW which connects to 
 
-standard (non-VPC) Lambda warmed by our own heartbeats driven by AWS CloudWatch Events with schedule expressions
+standard (non-VPC) Lambda warmed by our own heartbeat lambda functions driven by AWS CloudWatch Events with schedule expressions
 
 ---
 background-image: url(natgw.png)

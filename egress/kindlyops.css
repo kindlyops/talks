@@ -1,17 +1,28 @@
 
-body:after {
-content: url(logo.png);
-position: fixed;
-bottom: 3.5em;
-left: 3.5em;
- }
+.large { font-size: 130% }
 
-
-/* 
- body {
-    background-image: url(logo.png);
-    background-size: 20%;
-    background-repeat: no-repeat;
-    background-position: 3% 96%;
+.remark-slide>.right {
+text-align: right;
 }
-*/
+
+.remark-slide-number {
+  color: #87898C; /* medium grey */
+}
+
+
+.title-slide h1:before {
+  color: #e86953;
+  content: "SERVERLESS";
+}
+
+.title-slide h1 {
+  font-size: 400%;
+}
+
+.title-slide h2, .title-slide h3 {
+  display: none;
+}
+
+.title-slide .remark-slide-number {
+  display: none;
+}

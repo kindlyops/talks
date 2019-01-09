@@ -24,7 +24,7 @@
 body {
   font-family: 'Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif;
   font-weight: normal;
-  color: #000000;
+  color: #272822;
 }
 h1, h2, h3 {
   font-family: 'Yanone Kaffeesatz';
@@ -34,9 +34,9 @@ h1, h2, h3 {
 .remark-slide-content {
   background-color: #FFFFFF;
   font-size: 20px;
-  
-  
-  
+  background-image: url(logo.png);
+  background-size: 150px;
+  background-position: 11% 97%;
   padding: 1em 4em 1em 4em;
 }
 .remark-slide-content h1 {
@@ -81,21 +81,21 @@ a, a > code {
   background-color: rgba(255,255,0,0.5);
 }
 .inverse {
-  background-color: #e86953;
-  color: #000000;
+  background-color: #2fa09d;
+  color: #FFFFFF;
   
 }
 .inverse h1, .inverse h2, .inverse h3 {
-  color: #000000;
+  color: #FFFFFF;
 }
 .title-slide, .title-slide h1, .title-slide h2, .title-slide h3 {
-  color: #000000;
+  color: #3F4145;
 }
 .title-slide {
-  background-color: #2fa09d;
-  
-  
-  
+  background-color: #FFFFFF;
+  background-image: url(lines.png);
+  background-size: 40%;
+  background-position: bottom -150px center;
 }
 .title-slide .remark-slide-number {
   display: none;
@@ -132,7 +132,7 @@ img, video, iframe {
   max-width: 100%;
 }
 blockquote {
-  border-left: solid 5px #e8695380;
+  border-left: solid 5px #2fa09d80;
   padding-left: 1em;
 }
 .remark-slide table {
@@ -142,25 +142,25 @@ blockquote {
 }
 .remark-slide table thead th { border-bottom: 1px solid #ddd; }
 th, td { padding: 5px; }
-.remark-slide thead, .remark-slide tfoot, .remark-slide tr:nth-child(even) { background: #EE9686 }
+.remark-slide thead, .remark-slide tfoot, .remark-slide tr:nth-child(even) { background: #C0E2E1 }
 table.dataTable tbody {
   background-color: #FFFFFF;
-  color: #000000;
+  color: #272822;
 }
 table.dataTable.display tbody tr.odd {
   background-color: #FFFFFF;
 }
 table.dataTable.display tbody tr.even {
-  background-color: #EE9686;
+  background-color: #C0E2E1;
 }
 table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   background-color: rgba(255, 255, 255, 0.5);
 }
 .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
-  color: #000000;
+  color: #272822;
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button {
-  color: #000000 !important;
+  color: #272822 !important;
 }
 
 @page { margin: 0; }

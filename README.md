@@ -1,6 +1,6 @@
 ### Talks
 
-- [Serverless Egress without Cold Start](serverless-egress)
+- [Serverless Egress without Cold Start](/egress/presentation.html)
 
 ### Models
 

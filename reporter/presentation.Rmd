@@ -1,0 +1,278 @@
+---
+title: "<BR>REPORTING TOOLCHAIN"
+author: "Elliot Murphy"
+date: "2019/01/24 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [xaringan-themer.css, kindlyops.css]
+    chakra: libs/remark-latest.min.js
+    nature:
+      titleSlideClass: [center, middle, title-slide]
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      countdown: 120000
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+```{r xaringan-themer, include = FALSE}
+library(xaringanthemer)
+mono_accent(
+  base_color = "#2fa09d",
+  background_image = "logo.png",
+  background_size = "150px",
+  background_position = "11% 97%",
+  title_slide_background_image = "lines.png",
+  title_slide_background_size = "40%",
+  title_slide_background_color = "#FFFFFF",
+  title_slide_background_position = "bottom -150px center",
+  title_slide_text_color = "#3F4145"
+  )
+# TODO: customize using the Haven GRC fonts
+```
+
+class: inverse, middle, center
+background-image: url(patrick-tomasso-71909-unsplash.jpg)
+background-size: cover
+
+# trying to make nice reports
+
+???
+
+At first we used remarq.io, which is a paid web service
+designed for consultants to be able to make nicely formatted
+reports without wasting time. Remarq is created by a single
+developer running a small business, very very nice. Behind the
+scenes it uses Pandoc, great customer service. Exports PDFs to
+Dropbox smoothly, and got up and running without installing anything.
+
+---
+class: inverse, right, center
+background-image: url(ben-white-197668-unsplash.jpg)
+background-size: cover
+
+# what if things were<br>...less terrible?
+
+???
+
+Eventually got tired of trying to collaborate and revise reports inside a textarea
+on a web page. Remixing elements from different reports also became tedious.
+
+we ended up using google docs for collaborative editing, then painstakingly copy/pasting, then trying to fix formatting again and again.
+
+Missed having version control - Google Docs has some versioning but not good enough
+
+Had an entirely separate workflow for generating graphs which were then included as images
+into our reports.
+
+---
+class: inverse
+background-image: url(lucrezia-carnelos-785058-unsplash.jpg)
+background-size: cover
+
+# Time to learn<br>R Markdown!
+
+???
+
+Finally worked up the nerve to start figuring out R Markdown
+- At this point none of us knew R
+- none of us knew LaTeX or pandoc
+- wanted to version control our changes and work in plain text
+- wanted to use ggplot
+- read a Tufter book, wanted more control over house style
+- wanted to integrate the source data and R code for graphing more tightly
+- had grand dreams of integrating into a web application at some point
+
+---
+
+class: inverse, right
+background-image: url(chris-sabor-524212-unsplash.jpg)
+background-size: cover
+
+# working<br>together
+
+???
+
+R Markdown seemed promising, and RStudio was cool, but as we tried to trade back and
+forth between 3 people working on putting together a big report, it was impossible
+to keep our R environments in sync. When one person spent a couple days getting
+something added to the report, the next person would not be able to get things
+working in order to continue.
+
+---
+
+# compilereport utility script
+
+R glue code for invoking knit and generating PDF from RMarkdown
+
+```bash
+exec R -e \
+"rmarkdown::render('report.Rmd', output_file='output.pdf')"
+```
+
+Docker container that has the exact LaTeX customizations and R packages that we need
+
+custom graphics for report cover pages
+
+`docker-compose` wrapper that makes it dead simple to grab the container and generate the report
+
+???
+
+The Docker images were derived from the rocker project which already had RStudio
+bundled up into docker images.
+
+---
+
+# docker-compose.yml simpler invocation
+
+```yaml
+version: '2'
+services:
+  report:
+*    image: kindlyops/reporter:big-roboto
+    working_dir: /docs
+    volumes:
+      - .:/docs
+    command: [./compilereport]
+```
+
+???
+
+So this is a little helper config file which makes it easier to run a command
+inside a docker image, build/pull the docker image, mount volumes, etc.
+
+So the way it works is this specifies a docker image, the docker image
+has R, the needed R packages, any extra fonts.
+
+The source .Rmd file and source data files are in the local directory,
+docker volume mounts are used to expose the local files inside the docker
+container, and the output files are written back out to the host machine.
+
+This was worked well, but too much was hardcoded in the report.Rmd
+Wanted to be able to use a template and feed in some different
+data files from different projects/customers to generate customized
+graphs with standard formats.
+
+---
+
+# compilereport utility script
+
+```r
+#!/usr/bin/env Rscript
+
+suppressPackageStartupMessages(library("optparse"))
+
+option_list <- list(
+     make_option(c("-t", "--template"), action="store", 
+         default="report.Rmd", help="The file to use"),
+     make_option(c("-d", "--data"), action="store",
+*        default="input.csv", help="The input data file"),
+     make_option(c("-o", "--output"), action="store", 
+         default="output/output.pptx",
+         help="The output data file to create")
+     )
+
+opt_parser = OptionParser(option_list=option_list)
+options <- parse_args(opt_parser)
+
+*rmarkdown::render(options$template, output_file=options$output,
+*                  params = list(data = options$data))
+```
+
+???
+
+This is using Rscript as the shebang, and uses the optparse R package
+to process command line arguments to the script. From the perspective
+of the person running the command, they don't need to know that it's `R`.
+
+Allowing the input.csv, template file, and output file to be
+specified on the command line made things much more flexible.
+
+This was work we did when connecting up the publishing pipeline
+to our web application, so that we could trigger report generation
+from the app and have a background worker job generate the reports
+and publish them.
+
+---
+
+# passing parameters into R Markdown!
+
+```yaml
+---
+title: "An Report"
+output: 
+  powerpoint_presentation:
+    reference_doc: template.pptx
+params: 
+*   data: "input2.csv"
+---
+```
+
+???
+
+Note the params section that knitr parses when processing R Markown,
+this lines up with the parameter we defined in the `compilereport` Rscript cli
+---
+
+# Dockerfile
+
+```Dockerfile
+FROM rocker/rstudio:3.4.3
+
+RUN apt-get update \
+    && apt-get install -y zlib1g-dev libproj-dev xzdec gnupg \
+    && tlmgr init-usertree
+RUN tlmgr install roboto \
+    && install2.r --deps=TRUE remotes \
+    && install2.r --deps=TRUE tinytex \
+    && install2.r --deps=TRUE formatR \
+    && install2.r --deps=TRUE tidyverse \
+    && installGithub.r rstudio/rmarkdown
+```
+
+We build this image and tag it, and then reference the image
+from the docker-compose file. Everyone gets the same versions
+of the R libraries and other components.
+---
+
+# Future plans
+
+## stuff we want to improve
+
+Make the Docker images smaller!
+
+Connect to GitHub actions so that a report is compiled automatically
+when new revisions are pushed to master!
+
+Experiment with interactive graphs for exploring complex data
+
+Figuring out integration between R and Python in order to support use of Colaboratory notebooks - jupytext and reticulate
+
+Non-CLI subprocess way of calling into R code from Go code?
+
+Generating custom RMarkdown notebooks on the fly and exporting them to users on demand.
+
+---
+
+class: bottom, center
+background-image: url(rawpixel-633843-unsplash.jpg)
+background-size: cover
+
+# BONUS
+
+This presentation is made in R Markdown, using the excellent https://github.com/yihui/xaringan package.
+
+You can find the source to this presentation at https://github.com/kindlyops/talks/blob/master/reporter/presentation.Rmd
+
+---
+background-image: url(lines.png)
+background-position: bottom -135px center
+background-size: 40%
+class: center, middle, final
+
+# "everything can be beautiful"
+
+  elliot@kindlyops.com

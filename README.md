@@ -1,3 +1,6 @@
+- A modern reporting toolchain: RMarkdown with containers (R user group Portland)
+ - [slides](/reporter/presentation.html)
+
 - Serverless Egress without Cold Start (AWS Portsmouth User Group
   - [slides](/egress/presentation.html)
   - [![Video from AWS Portsmouth User Group](http://img.youtube.com/vi/KbCeAv0beAU/0.jpg)](https://www.youtube.com/watch?v=KbCeAv0beAU "Serverless Egress talk")

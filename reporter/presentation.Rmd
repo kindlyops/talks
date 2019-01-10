@@ -245,7 +245,8 @@ of the R libraries and other components.
 Make the Docker images smaller!
 
 Connect to GitHub actions so that a report is compiled automatically
-when new revisions are pushed to master!
+when new revisions are pushed to master? Really want to invoke knit
+when pushing to GitHub pages branch instead of jekyll.
 
 Experiment with interactive graphs for exploring complex data
 

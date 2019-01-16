@@ -19,9 +19,9 @@
 - Overcoming Regulatory Burden in Startups (DevOpsDays Boston 2015)
   - [slides](https://speakerdeck.com/statik/overcoming-regulatory-burden-in-startups-devopsdays-boston-2015)
   - [![Video from DevOpsDays Boston 2015](http://img.youtube.com/vi/4UwC74k12YA/0.jpg)](https://www.youtube.com/watch?v=4UwC74k12YA?t=11114 "Overcoming Regulatory Burden in Startups talk")
-- Observability, the new incompetence. Part 1: open your eyes (Hack Night Portland 2013)
+- Observability, the new incompetence. Part 1: open your eyes (Portland Maine Ruby Meetup 2013)
   - [slides](https://speakerdeck.com/statik/observability-the-new-incompetence)
-  - [![Video from Hack Night Meetup](http://img.youtube.com/vi/jOg_-i6-uJ8/0.jpg)](https://www.youtube.com/watch?v=jOg_-i6-uJ8 "Observability, the new incompetence talk")
+  - [![Video from PWM Ruby Meetup](http://img.youtube.com/vi/jOg_-i6-uJ8/0.jpg)](https://www.youtube.com/watch?v=jOg_-i6-uJ8 "Observability, the new incompetence talk")
 - A Cloud on My Desk: reducing complexity using open source tools (OSEHRA Open Source Summit 2013)
   - [slides](https://speakerdeck.com/statik/a-cloud-on-my-desk)
 

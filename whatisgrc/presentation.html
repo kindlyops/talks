@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title> context and strategy</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Elliot Murphy (updated: 2019-04-10)" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="kindlyops.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, title-slide, title-slide
+
+# <br>context and strategy
+## navigating an uncertain world
+### Elliot Murphy (updated: 2019-04-10)
+
+---
+
+
+
+
+
+# What and Why
+
+* .large[Governance: collection of capabilities driving principled performance]
+
+* .large[Risk: Market, Credit, Operational]
+
+* .large[Compliance: externally imposed standards]
+
+???
+
+Often compliance standards are vague or lag technology so much that the
+challenge is interpreting the standards in a responsible and balanced way.
+
+Risk is a very overloaded word, even worse than security.
+In addition to market risk, credit risk, might also think of liquidity risk.
+Often security people lose sight of the fact that cybersecurity is only one
+component of operational risk. Correctly placing cybersecurity as a component
+of operational risk is important for making balanced business decisions.
+
+This opens the door for folks working on cybersecurity to use more mature
+and structured ways of measuring and prioritizing risk. The old
+RED/YELLOW/GREEN arbitrary rankings are not sufficient
+
+---
+
+# Defining Operational Risk
+
+## RISK = Loss Event Frequency x Loss Magnitude
+
+- A measurable event
+
+- No such thing as "a risk"
+
+- a **loss event** is a **threat**  acting on an **asset** causing an **effect** 
+
+- Effects are CIA
+ - Confidentiality (data breach)
+ - Integrity (fraud)
+ - Availability (theft, DOS, outage)
+
+???
+
+There is no such thing as "a risk", there are amounts
+of risk associated with scenarios over a period of time.
+Typically we would set the time to 1 year.
+Example scenario would be laptop loss/theft over a year.
+You know how many laptops, how much travel, how many were
+lost last year: in 5 minutes 
+you have some of the necessary inputs to calculate the
+probabilities of loss over the next year.
+
+What is NOT risk?
+
+* A control deficiency: untested recovery process, weak passwords
+* A threat community (disgruntled employees, cybercriminals)
+* An asset (internet facing web servers)
+* An attack that does not cause loss (successfully defended, or asset of no value)
+---
+
+# What are losses?
+
+## FAIR six forms of loss
+
+* Productivity (business interruption)
+* Replacement (capital assets)
+* Response (crisis management, forensic investigation)
+* Fines &amp; Judgements
+* Reputation
+* Competitive Advantage
+
+---
+
+# Watch out for heatmaps
+
+## red flag for poor analysis
+
+* cannot add risk scenarios together - how much risk if you add 2 red risks?
+* range compression - just barely red vs very red
+* doesn't allow for expression of uncertainty
+* cannot calculate reduction in risk per dollar spent on security
+
+## Qualitative labels as summaries of ranges is fine
+
+https://www.fairinstitute.org/blog/heat-maps-dont-support-iso-31000
+https://www.researchgate.net/publication/266666768_The_Risk_of_Using_Risk_Matrices
+
+---
+background-image: url(lines.png)
+background-position: bottom -135px center
+background-size: 30%
+class: center, middle
+
+# "You can outsource your operations, but you cannot outsource your risk"
+
+  US Department of Homeland Security Cyber and Infrastructure Security Agency (CISA) [Awareness Briefing on Chinese Cyber Attacks](https://www.us-cert.gov/event/chinese-cyber-activity) [(slides)](https://www.us-cert.gov/sites/default/files/c3vp/Chinese-Cyber-Activity-Targeting-Managed-Service-Providers.pdf)
+
+???
+
+In February Kindly Ops attended this government briefing reviewing a sustained
+campaign by the chinese government against Managed Service Providers. During
+the briefing they referenced the January 2019 WorldWide Threat Assessment
+of the US Intelligence Community published by Daniel Coats, director of national intelligence, which stated "Cyber is the top threat to national security".
+
+The WHY is when a breach occurs at any company, we want to be sure that
+commercially reasonable defenses were in place, and that we had proactively
+analyzed and managed the risks, not just done the minimum mandated for
+compliance without considering organization specific risk scenarios.
+---
+class: center, middle
+
+# STRATEGY
+
+???
+
+All the moving parts are too big to fit inside any one experts head.
+We don't want to waste time and money overprotecting things, the
+security vendors will happily play off the growing concern and hype.
+
+While technical details of cybersecurity are changing rapidly,
+we have managed operational risk in the face of grave threats and
+significant uncertainty as long as we have had insurance companies.
+need to use good tools to help us make structured judgements.
+
+Some useful models and frameworks
+
+---
+
+background-image: url(img/kindlyops-grc-infographic.png)
+background-position: 10% 50%
+background-size: 80%
+class: center
+
+???
+
+Often friction between technology builders, product and business owners,
+and security and governance teams. Starting with empathy makes the
+rest of the process much more efficient.
+
+It is common for companies to work on this baseline
+from a top-down and bottom-up approach at the same time.
+Next will describe some of the control and risk frameworks that are 
+useful to accelerate development of a security program.
+
+Has your organization done initial scenario-based risk analysis based on prioritized
+threats?
+
+Do you have metrics or KPIs such as FORCE that encourage a learning organization?
+
+---
+class: center, middle
+
+# NIST Cyber Security Framework (CSF)
+
+???
+
+This is the top down cybersecurity framework
+
+good list of best practices around cybersecurity
+and risk management that organizations can follow as a guide.
+
+Can be used as a maturity model, where activities can be ranked on
+ordinal scales 1 to 5. This is what many firms are doing enterprise-wide.
+
+Important: NIST CSF does not define what cyber risk is, and does
+not provide guidance on how to assess what areas have the biggest probable
+loss exposure or prioritizing based on risk reduction.
+
+---
+class: center, middle
+
+# CIS Top 20, AWS Foundations Benchmark
+
+???
+
+This is the bottom-up control framework.
+Prioritized set of controls that protect against known cybersecurity
+attack vectors. Informed by consortium of industry experts and prioritized
+based on analysis of attacks across the industry.
+
+---
+class: center, middle
+
+# AWS Well-Architected Framework
+
+Security
+
+Operational Excellence
+
+Reliability
+
+Performance Efficiency
+
+Cost Optimization
+
+???
+
+12 years of cloud operations experience distilled into best practices
+across 5 areas of focus. Consider that many of the attacks that
+happen in the industry are against companies running on AWS, there
+is a great deal of detailed knowledge about how to run securely.
+
+---
+class: center, middle
+
+# FAIR (Factor Analysis Information Risk)
+
+https://www.fairinstitute.org/
+
+???
+
+Factor Analysis of Information Risk (FAIR) has emerged as the standard Value at Risk (VaR) framework for cybersecurity and operational risk.
+
+Originally developed at an insurance company, then published as
+an Open Group Standard, and now being adopted rapidly across
+the industry. Complementary to and compatible with CSF.
+
+This is something that being rapidly adopted across industry, and provides a
+way of adding structure to any discussion about controls.
+
+---
+
+# ASSESSING CURRENT STATE
+
+* .large[CSF Maturity Model assessment]
+* .large[CIS Cloud foundations benchmark]
+* .large[Security Culture Diagnostic]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function(time) {
+  var d2 = function(number) {
+    return ('0' + number).slice(-2); // left-pad 0 to minutes/seconds
+  },
+
+  time_format = function(total) {
+    var secs = Math.abs(total) / 1000;
+    var h = Math.floor(secs / 3600);
+    var m = Math.floor(secs % 3600 / 60);
+    var s = Math.round(secs % 60);
+    var res = d2(m) + ':' + d2(s);
+    if (h > 0) res = h + ':' + res;
+    return res;  // [hh:]mm:ss
+  },
+
+  slide_number_div = function(i) {
+    return document.getElementsByClassName('remark-slide-number').item(i);
+  },
+
+  current_page_number = function(i) {
+    return slide_number_div(i).firstChild.textContent;  // text "i / N"
+  };
+
+  var timer = document.createElement('span'); timer.id = 'slide-time-left';
+  var time_left = time, k = slideshow.getCurrentSlideIndex(),
+      last_page_number = current_page_number(k);
+
+  setInterval(function() {
+    time_left = time_left - 1000;
+    timer.innerHTML = ' ' + time_format(time_left);
+    if (time_left < 0) timer.style.color = 'red';
+  }, 1000);
+
+  slide_number_div(k).appendChild(timer);
+
+  slideshow.on('showSlide', function(slide) {
+    var i = slide.getSlideIndex(), n = current_page_number(i);
+    // reset timer when a new slide is shown and the page number is changed
+    if (last_page_number !== n) {
+      time_left = time; last_page_number = n;
+      timer.innerHTML = ' ' + time_format(time); timer.style.color = null;
+    }
+    slide_number_div(i).appendChild(timer);
+  });
+})(120000);</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

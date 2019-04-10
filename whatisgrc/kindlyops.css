@@ -1,0 +1,28 @@
+
+.large { font-size: 130% }
+
+.remark-slide>.right {
+text-align: right;
+}
+
+.remark-slide-number {
+  color: #87898C; /* medium grey */
+}
+
+
+.title-slide h1:before {
+  color: #e86953;
+  content: "Governance, Risk, Compliance";
+}
+
+.title-slide h1 {
+  font-size: 400%;
+}
+
+/*.title-slide h2, .title-slide h3 {
+  display: none;
+}*/
+
+.title-slide .remark-slide-number {
+  display: none;
+}

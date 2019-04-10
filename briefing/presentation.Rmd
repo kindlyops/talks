@@ -1,0 +1,118 @@
+---
+title: "<BR>REVIEW"
+author: "Elliot Murphy"
+date: "2019/01/24 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [xaringan-themer.css, kindlyops.css]
+    chakra: libs/remark-latest.min.js
+    nature:
+      titleSlideClass: [center, middle, title-slide]
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      countdown: 120000
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+```{r xaringan-themer, include = FALSE}
+library(xaringanthemer)
+mono_accent(
+  base_color = "#2fa09d",
+  background_image = "logo.png",
+  background_size = "150px",
+  background_position = "11% 97%",
+  title_slide_background_image = "lines.png",
+  title_slide_background_size = "40%",
+  title_slide_background_color = "#FFFFFF",
+  title_slide_background_position = "bottom -150px center",
+  title_slide_text_color = "#3F4145"
+  )
+# TODO: customize using the Haven GRC fonts
+```
+
+class: inverse, left
+background-image: url(ben-white-197668-unsplash.jpg)
+background-size: cover
+
+.pull-right[
+
+# CSA REVIEW
+
+- Purpose: review results
+
+- Process: highlight findings, answer questions
+
+- Payoff: clear understanding of results
+]
+
+???
+
+Nobody is ever excited about having yet another meeting.
+
+We care a lot about making sure people get both a big picture of
+how the company is doing in terms of overall trajectory with
+security, as well as specific prioritized details about current
+state and technical findings.
+
+Purpose, process, payoff.
+
+---
+class: inverse
+background-image: url(lucrezia-carnelos-785058-unsplash.jpg)
+background-size: cover
+
+# REVIEW
+
+1. Summary
+2. Culture
+3. Technical
+4. Questions
+
+???
+
+---
+
+class: inverse, right
+background-image: url(chris-sabor-524212-unsplash.jpg)
+background-size: cover
+
+# working<br>together
+
+???
+
+Lets review the security culture and FORCE metrics results.
+
+---
+
+# FOLLOW UP
+
+
+30 days for questions, ask away!
+
+Reminder to revoke our access
+
+---
+
+class: bottom, center
+background-image: url(rawpixel-633843-unsplash.jpg)
+background-size: cover
+
+# BONUS
+
+This presentation is made in R Markdown, using the excellent https://github.com/yihui/xaringan package.
+
+You can find the source to this presentation at https://github.com/kindlyops/talks/blob/master/briefing/presentation.Rmd
+
+---
+background-image: url(lines.png)
+background-position: bottom -135px center
+background-size: 40%
+class: center, middle, final
+
+# "everything can be beautiful"
+
+  elliot@kindlyops.com

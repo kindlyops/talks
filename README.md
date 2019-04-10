@@ -1,3 +1,6 @@
+- Scaling Risk Analysis with reproducible notebooks (SIRACon 2019 Cincinnati)
+  - [slides](/notebooks/presentation.html)
+
 - A modern reporting toolchain: RMarkdown with containers (R user group Portland)
   - [slides](/reporter/presentation.html)
 

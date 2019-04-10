@@ -23,10 +23,10 @@ library(xaringanthemer)
 mono_accent(
   base_color = "#2fa09d",
   background_image = "logo.png",
-  background_size = "150px",
-  background_position = "11% 97%",
+  background_size = "75px",
+  background_position = "3% 97%",
   title_slide_background_image = "lines.png",
-  title_slide_background_size = "40%",
+  title_slide_background_size = "35%",
   title_slide_background_color = "#FFFFFF",
   title_slide_background_position = "bottom -150px center",
   title_slide_text_color = "#3F4145"

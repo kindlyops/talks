@@ -35,8 +35,8 @@ h1, h2, h3 {
   background-color: #FFFFFF;
   font-size: 20px;
   background-image: url(logo.png);
-  background-size: 150px;
-  background-position: 11% 97%;
+  background-size: 75px;
+  background-position: 3% 97%;
   padding: 1em 4em 1em 4em;
 }
 .remark-slide-content h1 {
@@ -94,7 +94,7 @@ a, a > code {
 .title-slide {
   background-color: #FFFFFF;
   background-image: url(lines.png);
-  background-size: 40%;
+  background-size: 35%;
   background-position: bottom -150px center;
 }
 .title-slide .remark-slide-number {

@@ -1,0 +1,178 @@
+---
+title: "<BR>A Founders Guide"
+author: "Elliot Murphy"
+date: "2019/01/24 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [xaringan-themer.css, kindlyops.css]
+    chakra: libs/remark-latest.min.js
+    nature:
+      titleSlideClass: [center, middle, title-slide]
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      countdown: 120000
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+```{r xaringan-themer, include = FALSE}
+library(xaringanthemer)
+mono_accent(
+  base_color = "#2fa09d",
+  background_image = "logo.png",
+  background_size = "75px",
+  background_position = "3% 97%",
+  title_slide_background_image = "lines.png",
+  title_slide_background_size = "35%",
+  title_slide_background_color = "#FFFFFF",
+  title_slide_background_position = "bottom -150px center",
+  title_slide_text_color = "#3F4145"
+  )
+# TODO: customize using the Haven GRC fonts
+```
+
+class: inverse, left
+background-image: url(ben-white-197668-unsplash.jpg)
+background-size: cover
+
+.pull-right[
+
+# do I have to?
+
+- A good idea is not enough
+
+- A great product is not enough
+
+- No matter your business model, the founder needs to be able to raise awareness.
+]
+
+???
+
+Most new founders that I've met are allergic to marketing and sales,
+they are very excited about talking to customers and building a great
+product or delivering great services but feel jaded about marketing and
+sales.
+
+After being on the recieving end of a barrages of sales tactics, it's easy
+to start wanting to avoid "salesy" stuff.
+
+If you aren't mindful about this, you can shoot yourself in the foot by
+keeping people from learning about what you are doing and why they should care.
+
+---
+
+class: inverse, right
+background-image: url(chris-sabor-524212-unsplash.jpg)
+background-size: cover
+
+# stop<br>selling<br>me!
+
+???
+
+There is a big difference between trying to manipulate someone into a
+decision that is neutral or bad for them vs genuinely trying to help people.
+
+It wasn't so long ago that I didn't even have the language for different categories
+of sales and marketing activities in order to decide what I wanted to use or avoid.
+
+Thought it would be helpful to share pointers to some things that have been
+useful for me in my own journey.
+
+---
+
+# AGENDA
+
+1. The 4 sales conversations (WWP)
+2. The 5 challenges for building expertise (PM)
+3. the surprising effectiveness of video
+
+---
+
+# Different kinds of marketing
+
+1. Direct response marketing
+2. Brand awareness
+
+???
+
+Much of what we find distasteful is direct response marketing, where
+someone is trying to get you to buy something right now or sign up for something.
+
+Much of what we find useful is when someone teaches us or helps us solve a problem,
+and we don't mind if we are aware that the person helping us is associated with
+a brand that has products and services for sale.
+---
+
+# 4 Sales conversations
+
+Idea from Blair Enns of Win Without Pitching.
+https://2bobs.com/podcast/mastering-the-value-conversation
+
+1. Probative - prove your expertise
+2. Qualifying - prototypical sales
+3. Value - determining what value you can create
+4. Closing
+
+???
+
+It is so freeing, removes so much stress to categorize this way.
+Which conversation are we having?
+If it is the probative conversation, I am not going to
+qualify, I am not going to close.
+
+---
+
+# Building expertise
+
+Philip Morgan's analysis of how rapidly different activities
+build trust http://trustvelocity.com/
+
+1. Frequent publication
+2. Research that generates IP
+3. Speaking engagements
+4. Formalize IP  - package expertise to be usable by non-experts
+
+???
+
+This is a program I've been working through the last 6 months,
+and daily publication is surprisingly hard and surprisingly helpful.
+
+---
+background-image: url(photo-video.jpg)
+background-size: cover
+
+# Video
+
+???
+
+Video can convey sincerity, authenticity, and
+helpfulness in a way that is hard to match in
+written form.
+
+Videos can be transcribed and turned into blog posts.
+
+
+---
+
+class: bottom, center
+background-image: url(rawpixel-633843-unsplash.jpg)
+background-size: cover
+
+# BONUS
+
+This presentation is made in R Markdown, using the excellent https://github.com/yihui/xaringan package.
+
+You can find the source to this presentation at https://github.com/kindlyops/talks/blob/master/startupclass/presentation.Rmd
+
+---
+background-image: url(lines.png)
+background-position: bottom -135px center
+background-size: 40%
+class: center, middle, final
+
+# "everything can be beautiful"
+
+  elliot@kindlyops.com

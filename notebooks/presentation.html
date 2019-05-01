@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html>
   <head>
     <title>withREPRODUCIBLE NOTEBOOKS</title>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <meta name="author" content="Elliot Murphy" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
     <link rel="stylesheet" href="kindlyops.css" type="text/css" />
@@ -13,7 +13,7 @@ class: center, middle, title-slide, title-slide
 
 # <BR>with<BR>REPRODUCIBLE NOTEBOOKS
 ### Elliot Murphy
-### 2019/01/24 (updated: 2019-04-10)
+### 2019/01/24 (updated: 2019-05-01)
 
 ---
 
@@ -21,57 +21,102 @@ class: center, middle, title-slide, title-slide
 
 
 
-class: inverse, middle, center
-background-image: url(patrick-tomasso-71909-unsplash.jpg)
+class: bottom, center
+background-image: url(rawpixel-633843-unsplash.jpg)
 background-size: cover
 
-# trying to make nice reports
+# PAYOFF
+
+.large[Presentation https://www.kindlyops.com/sira19]
+
+This presentation is made in R Markdown, using the excellent https://github.com/yihui/xaringan package.
+
+You can find the source to this presentation at https://github.com/kindlyops/talks/blob/master/reporter/presentation.Rmd
 
 ???
 
-At first we used remarq.io, which is a paid web service
-designed for consultants to be able to make nicely formatted
-reports without wasting time. Remarq is created by a single
-developer running a small business, very very nice. Behind the
-scenes it uses Pandoc, great customer service. Exports PDFs to
-Dropbox smoothly, and got up and running without installing anything.
+Right after lunch so you are going to start feeling sleepy.
+Better start by telling you the payoff for sticking around for this talk.
+If you do need to step out, or if you want to skip ahead, the slides are online, you can open them from kindlyops.com/sira19
+If you grab that URL, open it on your phone or jot it down, the links I reference will easy for you to access later, and you can easily share this presentation with other people at work.
+
+Goal of this talk is to help you get a raise this year. If you don't get a raise this year after using the things I show you, get in touch, explain, I will help you get a raise. I believe hats possible because on a big project I've worked on over the last year, everyone got a raise/promotion.
+
+Secret goal of this talk is to make you do the thing I want you to do by promising you a raise.
+
+And if I look into the Satir interaction model, the feeling about the feeling: Secret secret goal is to make you think I'm clever by telling you the secret goal, because I Like all humans crave your acceptance and respect.
 
 ---
-class: inverse, right, center
-background-image: url(ben-white-197668-unsplash.jpg)
+class: inverse, right
+background-image: url(spacex-1130894-unsplash.jpg)
 background-size: cover
 
-# what if things were&lt;br&gt;...less terrible?
+# Your Mission
+
+
+.pull-right.left[
+Try a notebook, modify it, share with one other person
+
+Make your product export notebooks
+]
 
 ???
 
-Eventually got tired of trying to collaborate and revise reports inside a textarea
-on a web page. Remixing elements from different reports also became tedious.
+So I promised a payoff, what do I actually want you to do when you
+leave? Try out a notebook. Specifically, try it out with someone
+else, the sharing and remixing aspect. If you try it on your own
+it's not so good. I'm going to be giving you an example notebook
+to start from with a single click.
 
-we ended up using google docs for collaborative editing, then painstakingly copy/pasting, then trying to fix formatting again and again.
+Some of you are overachievers. I see you. make your product export notebooks. Don't lock in your customers data, any of the graphs
+and reports that you make, make them exportable as notebooks. I dare you.
 
-Missed having version control - Google Docs has some versioning but not good enough
-
-Had an entirely separate workflow for generating graphs which were then included as images
-into our reports.
+So the rest of this talk is some stories to try and convince you.
 
 ---
-class: inverse
-background-image: url(lucrezia-carnelos-785058-unsplash.jpg)
+class: inverse, bottom, right
+background-image: url(mael-balland-1157013-unsplash.jpg)
 background-size: cover
 
-# Time to learn&lt;br&gt;R Markdown!
+# Easy to try
 
 ???
 
-Finally worked up the nerve to start figuring out R Markdown
-- At this point none of us knew R
-- none of us knew LaTeX or pandoc
-- wanted to version control our changes and work in plain text
-- wanted to use ggplot
-- read a Tufter book, wanted more control over house style
-- wanted to integrate the source data and R code for graphing more tightly
-- had grand dreams of integrating into a web application at some point
+The reason that we are here at this conference, are learning and promoting quantitative risk techniques is because most of us have felt the pinch of needing to have better conversations about risk, to influence better decisions.
+
+The idea at the core of this talk is that when you make it easy for people to try out any new technique, to quickly use it without installing extra software, when it is comfortable and fluid and easy to change one parameter and see the results change, they are likely to start using the techniques on their own. we are looking for lever that will increase the level of cognitive performance across multiple teams, to improve the quality of the conversation that people have before making a decision.
+
+Techniques and tools that used to be very specialized are now cheaply available to anyone who's interested to try them out.
+
+---
+
+class: inverse, center
+background-image: url(emma-roorda-225458-unsplash.jpg)
+background-size: cover
+
+# .large[PLAY]
+
+???
+
+This is something that matters not just for risk analysis, it’s about data science generally. I’d like to see the general workforce develop the ability to use quantitative risk analysis not only for cyber security risk scenarios, but for all kinds of general purpose operational risk scenarios, because it leads to a higher quality conversation and higher quality decision.
+
+tony’s example post on LinkedIn about whether to buy insurance for a phone was fabulous because it was an example of a lightweight on-the-fly use of quantitative risk analysis for a spur of the moment scenario.
+
+The only reason that someone can whip up a scenario like that is if it’s easy to use the techniques - when it’s easy enough for people to try these techniques in casual scenarios, in toy scenarios, they will get SO MUCH better and more confident at using them in important scenarios.
+
+Play and experimentation is crucial to getting grassroots adoption of these techniques.
+
+---
+
+class: center
+
+# LEVEL UP
+
+???
+
+When I think about the governance part of governance risk and compliance, I get very intereste in how the cognitive ability of groups changes over time, and how they are able to take on harder and harder challenges that no single person in the group is capable of explaining. I think a lot about tools/levers/cognitive multipliers that work on the front lines, at the edges, that are not exclusively top-down but can be used independently, divergently, experimentally, without centralized permission.
+
+---
 
 ---
 
@@ -83,34 +128,20 @@ background-size: cover
 
 ???
 
-R Markdown seemed promising, and RStudio was cool, but as we tried to trade back and
-forth between 3 people working on putting together a big report, it was impossible
-to keep our R environments in sync. When one person spent a couple days getting
-something added to the report, the next person would not be able to get things
-working in order to continue.
 
 ---
 
-# compilereport utility script
+# Example notebooks
 
-R glue code for invoking knit and generating PDF from RMarkdown
+A notebook with some example graphs using python.&lt;br&gt;
+&lt;a href="https://colab.research.google.com/github/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/04.14-Visualization-With-Seaborn.ipynb"&gt;&lt;img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open and Execute in Google Colaboratory"&gt;&lt;/a&gt;
 
-```bash
-exec R -e \
-"rmarkdown::render('report.Rmd', output_file='output.pdf')"
-```
-
-Docker container that has the exact LaTeX customizations and R packages that we need
-
-custom graphics for report cover pages
-
-`docker-compose` wrapper that makes it dead simple to grab the container and generate the report
 
 ???
 
-The Docker images were derived from the rocker project which already had RStudio
-bundled up into docker images.
-
+This is a chapter from the Python Data Science book. It is
+published on a website, and with a single click you can make your own copy and start editing in Google Colab, which is a hosted environment
+for Jupyter notebooks in much the same way as Google Docs is a hosted platform for documents.
 ---
 
 # docker-compose.yml simpler invocation
@@ -244,18 +275,6 @@ Non-CLI subprocess way of calling into R code from Go code?
 Generating custom RMarkdown notebooks on the fly and exporting them to users on demand.
 
 ---
-
-class: bottom, center
-background-image: url(rawpixel-633843-unsplash.jpg)
-background-size: cover
-
-# BONUS
-
-This presentation is made in R Markdown, using the excellent https://github.com/yihui/xaringan package.
-
-You can find the source to this presentation at https://github.com/kindlyops/talks/blob/master/reporter/presentation.Rmd
-
----
 background-image: url(lines.png)
 background-position: bottom -135px center
 background-size: 40%
@@ -265,7 +284,6 @@ class: center, middle, final
 
   elliot@kindlyops.com
     </textarea>
-<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="libs/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
 "highlightStyle": "github",
@@ -275,41 +293,11 @@ class: center, middle, final
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
 });
-(function(d) {
-  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
   if (!r) return;
   s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
   d.head.appendChild(s);
-})(document);
-
-(function(d) {
-  var el = d.getElementsByClassName("remark-slides-area");
-  if (!el) return;
-  var slide, slides = slideshow.getSlides(), els = el[0].children;
-  for (var i = 1; i < slides.length; i++) {
-    slide = slides[i];
-    if (slide.properties.continued === "true" || slide.properties.count === "false") {
-      els[i - 1].className += ' has-continuation';
-    }
-  }
-  var s = d.createElement("style");
-  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
-  d.head.appendChild(s);
-})(document);
-// delete the temporary CSS (for displaying all slides initially) when the user
-// starts to view slides
-(function() {
-  var deleted = false;
-  slideshow.on('beforeShowSlide', function(slide) {
-    if (deleted) return;
-    var sheets = document.styleSheets, node;
-    for (var i = 0; i < sheets.length; i++) {
-      node = sheets[i].ownerNode;
-      if (node.dataset["target"] !== "print-only") continue;
-      node.parentNode.removeChild(node);
-    }
-    deleted = true;
-  });
 })();
 (function(time) {
   var d2 = function(number) {
@@ -369,8 +357,8 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
 </script>
 
 <script>
-slideshow._releaseMath = function(el) {
-  var i, text, code, codes = el.getElementsByTagName('code');
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
   for (i = 0; i < codes.length;) {
     code = codes[i];
     if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
@@ -384,8 +372,7 @@ slideshow._releaseMath = function(el) {
     }
     i++;
   }
-};
-slideshow._releaseMath(document);
+})();
 </script>
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

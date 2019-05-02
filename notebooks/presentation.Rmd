@@ -160,7 +160,11 @@ background-size: cover
 ???
 
 People who do a lot of work in spreadsheets and people who do a lot of work in code
-tend to have strong feelings about their tools. Over the last year, I worked with 
+tend to have strong feelings about their tools. 
+Generally, the people I've worked with that use spreadsheets every
+day are a different cohort of people than the ones that read and write
+code every day, and they have very different work patterns and preferences, even if the calculations they are running are similar.
+Over the last year, I worked with 
 a product development team at a global bank helping them set up a security program that included
 risk analysis, and after we introduced notebooks, the feeling changed from "quantitative analysis is too hard" to "this is pretty cool" to
 "look I did some additional scenarios what do you think?”
@@ -283,7 +287,7 @@ The 3rd example is not a Jupyter notebook, it's an RMarkdown notebook. Wrote thi
 
 ![](juno-ios-notebook.jpg)
 ???
-iOS client, so you can edit your jupyter notebook from your iPad
+iOS client, an app called Juno, so you can edit your jupyter notebook from your iPad. Connects to Azure cloud notebooks or Cocalc, or your own private binder server.
 
 ---
 
@@ -306,7 +310,7 @@ iOS client, so you can edit your jupyter notebook from your iPad
  * Traceable
  * Remixable
 
-* #### If you are building products that do quant risk, please make them export notebooks! Don't hold the data prisoner.
+* #### If you are building products that do quant analysis, please make them export notebooks! Don't hold the data prisoner.
 
 ---
 background-image: url(lines.png)
@@ -317,3 +321,10 @@ class: center, middle, final
 # "everything can be beautiful"
 
   elliot@kindlyops.com
+  
+???
+
+If you found this interesting or have questions, I'd LOVE to talk,
+I'll be right outside at the Kindly Ops table. Please email me
+or connect on LinkedIn, I love meeting people and sharing everything
+I possibly can.

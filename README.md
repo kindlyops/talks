@@ -1,5 +1,6 @@
 - Scaling Risk Analysis with reproducible notebooks (SIRACon 2019 Cincinnati)
   - [slides](/notebooks/presentation.html)
+  - [![Video from AWS Portsmouth User Group](http://img.youtube.com/vi/tsnZEtO6HcU/0.jpg)](https://www.youtube.com/watch?v=tsnZEtO6HcU "Scaling Risk Analysis")
 
 - What is GRC? Explaining the current landscape
   - [slides](/whatisgrc/presentation.html)

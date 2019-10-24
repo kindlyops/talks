@@ -36,16 +36,36 @@ mono_accent(
 
 * .large[Governance: collection of capabilities driving principled performance]
 
-* .large[Risk: Market, Credit, Operational]
+ * Mandatory code review
+ * Forced 2 week vacations really! [FDIC](https://www.fdic.gov/news/news/financial/1995/fil9552.html)
 
 * .large[Compliance: externally imposed standards]
 
+ * UL listing for electrical appliances
+ * PCI standard for card processing
+ * FIPS 140-2 for crypto modules
+
+* .large[Risk: Market, Credit, Operational]
+
+ * Great introduction in the free and open source book [_Financial Analytics Using R_](https://bookdown.org/wfoote01/faur/)
+
 ???
 
-Often compliance standards are vague or lag technology so much that the
-challenge is interpreting the standards in a responsible and balanced way.
+One way to think about governance is that it's typically about setting
+up forces that are going to act on a situation where you don't know
+any of the details or the people. It as to be vague enough that it's
+possible for people to do the right thing. Code review, imagine trying
+to make a control that was going to make things safer regardless of
+technology, language, or team size. Imagine trying to make a rule that
+was going to prevent fraud in companies that haven't been formed yet,
+using technologies that haven't been invented yet!
 
-Risk is a very overloaded word, even worse than security.
+In highly technical fields, compliance standards can be vague or lag technology 
+so much that the challenge is interpreting the standards in a responsible and
+balanced way. Healthcare and cybersecurity in particular, over prescriptive
+
+The only reason we care about governance and compliance is because we care
+about risk. Risk is a very overloaded word, even worse than security.
 In addition to market risk, credit risk, might also think of liquidity risk.
 Often security people lose sight of the fact that cybersecurity is only one
 component of operational risk. Correctly placing cybersecurity as a component
@@ -71,6 +91,8 @@ RED/YELLOW/GREEN arbitrary rankings are not sufficient
  - Confidentiality (data breach)
  - Integrity (fraud)
  - Availability (theft, DOS, outage)
+
+- Effects have a magnitude, or cost
 
 ???
 
@@ -101,6 +123,45 @@ What is NOT risk?
 * Fines & Judgements
 * Reputation
 * Competitive Advantage
+
+---
+
+# How to express the measurement?
+
+## Probability of loss for a scenario
+
+* Probability of loss event
+* Probability of magnitude
+* Not a single point ordinal number!
+* Example from [TidyRisk Evaluator](https://evaluator.tidyrisk.org/reports/evaluator_risk_analysis.html)
+
+---
+
+background-image: url(img/evaluator-loss-exceedance.png)
+background-position: 10% 50%
+background-size: 80%
+class: center
+
+???
+
+This is an example from the example free and open source TidyRisk
+toolkit by David Severski. A common way to review the expected losses
+in a year. This is an example aggregating 56 different risk scenarios.
+
+The probabilities can be added up so you get a similar curve whether
+looking at a single scenario or rolled up for the entire enterprise,
+or split out by category, etc.
+
+This example is showing the 80% likelihood of losses exceeding a certain
+level. So 80% another way to think about that is 4 out of 5 years. So
+based on the estimates that went into this example risk analysis, 4 out
+of 5 years they are expecting at least $4.2M in losses.
+
+The immediately useful thing about this is that you can have a business
+conversation around a budget. And you can focus your risk reduction
+efforts in the right spot! Maybe the right thing to do is reducing threats,
+but maybe the right thing to do is reducing magnitude of loss!
+Would you spend $5 million to prevent $4M in loss?
 
 ---
 
@@ -180,10 +241,27 @@ threats?
 
 Do you have metrics or KPIs such as FORCE that encourage a learning organization?
 
+Build empathy starts with this presentation, helping people understand the bigger
+picture rather than expecting them to react perfectly to ever-increasing tensions.
+
+---
+
+# Mental Models and Organizational Learning
+
+* .large[Lance Hayden _People-Centric Security_]
+ * [CC-licensed toolkits](http://lancehayden.net/culture/)
+* .large[Security Culture Diagnostic Tool]
+ * [Haven open source SCDS implementation](https://github.com/kindlyops/havengrc)
+* .large[Security FORCE metrics]
+ * Maturity models like CSF give an initial lift, not sustained improvement
+ * are these metrics more governance or compliance?
+
 ---
 class: center, middle
 
+# Baseline, top-down 
 # NIST Cyber Security Framework (CSF)
+
 
 ???
 
@@ -202,6 +280,7 @@ loss exposure or prioritizing based on risk reduction.
 ---
 class: center, middle
 
+# Baseline - bottum up
 # CIS Top 20, AWS Foundations Benchmark
 
 ???
@@ -213,6 +292,8 @@ based on analysis of attacks across the industry.
 
 ---
 class: center, middle
+
+# baseline - breadth
 
 # AWS Well-Architected Framework
 
@@ -251,6 +332,7 @@ the industry. Complementary to and compatible with CSF.
 This is something that being rapidly adopted across industry, and provides a
 way of adding structure to any discussion about controls.
 
+
 ---
 
 # ASSESSING CURRENT STATE
@@ -259,3 +341,21 @@ way of adding structure to any discussion about controls.
 * .large[CIS Cloud foundations benchmark]
 * .large[Security Culture Diagnostic]
 
+---
+# Emerging work
+
+* .large[FAIR Privacy]
+ * [NIST work on quantitative privacy risk for individuals](https://github.com/usnistgov/PrivacyEngCollabSpace/tree/master/tools/risk-assessment/FAIR-Privacy)
+* .large[NIST further endorsement of FAIR] September 2019
+ * [NIST mapping of FAIR to CSF](https://www.nist.gov/cyberframework/informative-references/informative-reference-catalog)
+ 
+???
+ 
+The privacy work is particularly interesting because it's applied to inviduals, not organizations.
+The way you model loss for individuals is super interesting compared to organizations.
+If there is a 95% chance that I'm going to die from my terminal cancer in the next 6 months,
+would I take a medication that has a 50% chance of killing me in 36 months?
+
+---
+
+# Questions?

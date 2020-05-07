@@ -110,7 +110,7 @@ What is NOT risk?
 
 * A control deficiency: untested recovery process, weak passwords
 * A threat community (disgruntled employees, cybercriminals)
-* An asset (internet facing web servers)
+* An asset (database of customer records)
 * An attack that does not cause loss (successfully defended, or asset of no value)
 ---
 
@@ -166,19 +166,29 @@ Would you spend $5 million to prevent $4M in loss?
 
 ---
 
-# Watch out for heatmaps
-
-## red flag for poor analysis
+# heatmaps - red flag for poor analysis
 
 * cannot add risk scenarios together - how much risk if you add 2 red risks?
 * range compression - just barely red vs very red
 * doesn't allow for expression of uncertainty
 * cannot calculate reduction in risk per dollar spent on security
-
-## Qualitative labels as summaries of ranges is fine
+* Use online tools to get a feel for building a model from range estimates
+* Qualitative labels as summaries of ranges is fine
 
 https://www.fairinstitute.org/blog/heat-maps-dont-support-iso-31000
 https://www.researchgate.net/publication/266666768_The_Risk_of_Using_Risk_Matrices
+https://medium.com/guesstimate-blog
+
+???
+
+One of the most crucial concepts to take away here is that measurement is
+reduction in uncertainty. Experts making subjective estimates is still useful,
+but we want to be careful to capture the uncertainty in those estimates so that
+when we combine estimates to build a model, we don't throw away information and
+make gross math errors. There are solid, well known math techniques for working
+with uncertainty (probabilities), and counting the number of "Red" threats is
+actively harmful. Cyber security should be expected to learn the same basic
+numeracy that we expect from finance folks.
 
 ---
 background-image: url(lines.png)

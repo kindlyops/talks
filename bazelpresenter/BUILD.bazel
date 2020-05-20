@@ -2,8 +2,8 @@ load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
 load(
     "@io_bazel_rules_docker//container:container.bzl",
     "container_image",
-    "container_pull",
 )
+load("@io_bazel_rules_docker//docker/util:run.bzl", "container_run_and_extract")
 
 # files we want to add to the docker image
 pkg_tar(
@@ -13,18 +13,9 @@ pkg_tar(
     },
 )
 
-load(":args.bzl", "get_run_flags")
-
 container_image(
-    name = "presenter",
+    name = "presenter_image",
     base = "@xaringan_stable//image",
-    cmd = [
-        "exec",
-        "R",
-        "-e",
-        "rmarkdown::render('presentation.Rmd',output_file='/output/presentation.html')",
-    ],
-    docker_run_flags = get_run_flags(),
     legacy_run_behavior = False,
     tars = [
         ":files",
@@ -32,17 +23,11 @@ container_image(
     workdir = "/docs",
 )
 
-# TODO
-# set volumes or docker_run_flags attribute on container_image so that we can get the generated
-# presentation.html back out of the container
-#
-# write a genrule that executes the equivalent of `bazel run :presenter`. If we pass :presenter
-# as a tool to a genrule can we execute it? Want the genrule to execute the docker image and 
-# produce the new output.
-#genrule(
-#    name = "generate",
-#    tools = [":presenter"],
-#    cmd = "docker run -it --rm bazel:
-# this pooints out that we probably can't run a bazel target from inside a bazel run
-# https://groups.google.com/forum/#!topic/bazel-discuss/9wysyUKeH7U
-# maybe it would make more sense to use rules_r instead?
+container_run_and_extract(
+    name = "presentation",
+    commands = [
+        "R -e \\\"rmarkdown::render('presentation.Rmd', output_file='presentation.html')\\\"",
+    ],
+    extract_file = "/docs/presentation.html",
+    image = ":presenter_image.tar",
+)

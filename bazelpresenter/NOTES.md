@@ -1,4 +1,11 @@
 
+## building presentation with bazel
+
+    bazel build presentation
+
+This requires a running docker daemon because it executes the xaringen build
+step inside a docker container with R
+
 ## Loading bazel-generated docker image into local docker daemon for inspection
 
     # see https://github.com/bazelbuild/rules_docker#debugging-lang_image-rules

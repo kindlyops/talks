@@ -125,6 +125,18 @@ What is NOT risk?
 * Reputation
 * Competitive Advantage
 
+???
+
+Sometimes it's useful to split these into two buckets, primary and secondary
+losses. Primary losses incurred directly by the organization, secondary losses
+imposed later from forces outside the organization (market, government)
+
+We are NOT trying to completely eliminate losses! Trying to make better decisions
+about them, manage them.
+
+Can you imagine an investor deciding that they were going to pursue a zero-losses
+investment strategy? They might do it, but they would also have zero gains.
+
 ---
 
 # How to express the measurement?
@@ -135,6 +147,18 @@ What is NOT risk?
 * Probability of magnitude
 * Not a single point ordinal number!
 * Example from [TidyRisk Evaluator](https://evaluator.tidyrisk.org/reports/evaluator_risk_analysis.html)
+
+???
+
+often get hung up on measurement and expert estimation. How can an estimate be
+a measurement?
+
+Two super important points
+* measurement is reduction in uncertainty. Lets talk through an example
+* when we record an estimate, we want to INCLUDE the uncertainty so that it
+  doesn't get lost when we combine multiple estimates. If you want to go deep
+  on this, recommend the book Bayesian Methods for Hackers, it's on github.
+* Also recommend Doug Hubbard book, how to measure anything in cybersecurity risk
 
 ---
 

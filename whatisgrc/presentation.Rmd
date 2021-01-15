@@ -315,7 +315,7 @@ loss exposure or prioritizing based on risk reduction.
 ---
 class: center, middle
 
-# Baseline - bottum up
+# Baseline - bottom up
 # CIS Top 20, AWS Foundations Benchmark
 
 ???

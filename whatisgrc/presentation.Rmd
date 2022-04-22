@@ -1,7 +1,7 @@
 ---
 title: "<br>context and strategy"
 subtitle: "navigating an uncertain world"
-author: "Elliot Murphy (updated: `r Sys.Date()`)"
+author: "(updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -228,7 +228,7 @@ class: center, middle
 
 ???
 
-In February Kindly Ops attended this government briefing reviewing a sustained
+In February 2019 Kindly Ops attended this government briefing reviewing a sustained
 campaign by the chinese government against Managed Service Providers. During
 the briefing they referenced the January 2019 WorldWide Threat Assessment
 of the US Intelligence Community published by Daniel Coats, director of national intelligence, which stated "Cyber is the top threat to national security".
@@ -270,7 +270,7 @@ rest of the process much more efficient.
 
 It is common for companies to work on this baseline
 from a top-down and bottom-up approach at the same time.
-Next will describe some of the control and risk frameworks that are 
+Next will describe some of the control and risk frameworks that are
 useful to accelerate development of a security program.
 
 Has your organization done initial scenario-based risk analysis based on prioritized

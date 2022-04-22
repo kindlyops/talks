@@ -11,131 +11,89 @@
  *
  *  Need help? Try:
  *    - vignette(package = "xaringanthemer")
- *    - ?xaringanthemer::style_xaringan
+ *    - ?xaringanthemer::write_xaringan_theme
  *    - xaringan wiki: https://github.com/yihui/xaringan/wiki
  *    - remarkjs wiki: https://github.com/gnab/remark/wiki
  *
- *  Version: 0.3.0
- *
  * ------------------------------------------------------- */
-@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&display=swap);
-@import url(https://fonts.googleapis.com/css?family=Cabin:600,600i&display=swap);
-@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700);
 
-
-:root {
-  /* Fonts */
-  --text-font-family: 'Noto Sans';
-  --text-font-is-google: 1;
-  --text-font-family-fallback: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial;
-  --text-font-base: sans-serif;
-  --header-font-family: Cabin;
-  --header-font-is-google: 1;
-  --code-font-family: 'Source Code Pro';
-  --code-font-is-google: 1;
-  --base-font-size: 20px;
-  --text-font-size: 1rem;
-  --code-font-size: 0.9rem;
-  --code-inline-font-size: 1em;
-  --header-h1-font-size: 2.75rem;
-  --header-h2-font-size: 2.25rem;
-  --header-h3-font-size: 1.75rem;
-
-  /* Colors */
-  --text-color: #272822;
-  --header-color: #2fa09d;
-  --background-color: #FFFFFF;
-  --link-color: #2fa09d;
-  --text-bold-color: #2fa09d;
-  --code-highlight-color: rgba(255,255,0,0.5);
-  --inverse-text-color: #FFFFFF;
-  --inverse-background-color: #2fa09d;
-  --inverse-header-color: #FFFFFF;
-  --title-slide-background-color: #FFFFFF;
-  --title-slide-text-color: #3F4145;
-  --header-background-color: #2fa09d;
-  --header-background-text-color: #FFFFFF;
-  --base: #2fa09d;
-  --white: #FFFFFF;
-  --black: #272822;
-}
-
-html {
-  font-size: var(--base-font-size);
-}
 
 body {
-  font-family: var(--text-font-family), var(--text-font-family-fallback), var(--text-font-base);
+  font-family: 'Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif;
   font-weight: normal;
-  color: var(--text-color);
+  color: #272822;
 }
 h1, h2, h3 {
-  font-family: var(--header-font-family);
-  font-weight: 600;
-  color: var(--header-color);
+  font-family: 'Yanone Kaffeesatz';
+  font-weight: normal;
+  color: #2fa09d;
 }
 .remark-slide-content {
-  background-color: var(--background-color);
-  font-size: 1rem;
+  background-color: #FFFFFF;
+  font-size: 20px;
   background-image: url(img/logo.png);
   background-size: 75px;
   background-position: 3% 97%;
-  padding: 16px 64px 16px 64px;
-  width: 100%;
-  height: 100%;
+  padding: 1em 4em 1em 4em;
 }
 .remark-slide-content h1 {
-  font-size: var(--header-h1-font-size);
+    font-size: 55px;
 }
 .remark-slide-content h2 {
-  font-size: var(--header-h2-font-size);
+    font-size: 45px;
 }
 .remark-slide-content h3 {
-  font-size: var(--header-h3-font-size);
+    font-size: 35px;
 }
 .remark-code, .remark-inline-code {
-  font-family: var(--code-font-family), Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+  font-family: 'Source Code Pro', 'Lucida Console', Monaco, monospace;
 }
 .remark-code {
-  font-size: var(--code-font-size);
+  font-size: 0.9em;
 }
 .remark-inline-code {
-  font-size: var(--code-inline-font-size);
+  font-size: 1em;
   color: #2fa09d;
+  
+  
 }
 .remark-slide-number {
   color: #2fa09d;
   opacity: 1;
   font-size: 0.9em;
 }
-strong { color: var(--text-bold-color); }
+strong{color:#2fa09d;}
 a, a > code {
-  color: var(--link-color);
+  color: #2fa09d;
   text-decoration: none;
 }
 .footnote {
+  
   position: absolute;
-  bottom: 60px;
+  bottom: 3em;
   padding-right: 4em;
   font-size: 0.9em;
 }
 .remark-code-line-highlighted {
-  background-color: var(--code-highlight-color);
+  background-color: rgba(255,255,0,0.5);
 }
 .inverse {
-  background-color: var(--inverse-background-color);
-  color: var(--inverse-text-color);
+  background-color: #2fa09d;
+  color: #FFFFFF;
   
 }
 .inverse h1, .inverse h2, .inverse h3 {
-  color: var(--inverse-header-color);
+  color: #FFFFFF;
 }
 .title-slide, .title-slide h1, .title-slide h2, .title-slide h3 {
-  color: var(--title-slide-text-color);
+  color: #3F4145;
 }
 .title-slide {
-  background-color: var(--title-slide-background-color);
-  background-image: url("lines.png");
+  background-color: #FFFFFF;
+  background-image: url(lines.png);
   background-size: 35%;
   background-position: bottom -150px center;
 }
@@ -182,50 +140,27 @@ blockquote {
   border-top: 1px solid #666;
   border-bottom: 1px solid #666;
 }
-.remark-slide table thead th {
-  border-bottom: 1px solid #ddd;
-}
-th, td {
-  padding: 5px;
-}
-.remark-slide thead, .remark-slide tfoot, .remark-slide tr:nth-child(even) {
-  background: #D5ECEB;
-}
+.remark-slide table thead th { border-bottom: 1px solid #ddd; }
+th, td { padding: 5px; }
+.remark-slide thead, .remark-slide tfoot, .remark-slide tr:nth-child(even) { background: #C0E2E1 }
 table.dataTable tbody {
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: #FFFFFF;
+  color: #272822;
 }
 table.dataTable.display tbody tr.odd {
-  background-color: var(--background-color);
+  background-color: #FFFFFF;
 }
 table.dataTable.display tbody tr.even {
-  background-color: #D5ECEB;
+  background-color: #C0E2E1;
 }
 table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   background-color: rgba(255, 255, 255, 0.5);
 }
 .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
-  color: var(--text-color);
+  color: #272822;
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button {
-  color: var(--text-color) !important;
-}
-
-/* Slide Header Background for h1 elements */
-.remark-slide-content.header_background > h1 {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: var(--header-background-color);
-  color: var(--header-background-text-color);
-  padding: 2rem 64px 1.5rem 64px;
-  margin-top: 0;
-  box-sizing: border-box;
-}
-.remark-slide-content.header_background {
-  padding-top: 7rem;
+  color: #272822 !important;
 }
 
 @page { margin: 0; }
@@ -238,23 +173,3 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
     left: 0 !important;
   }
 }
-
-.base {
-  color: var(--base);
-}
-.bg-base {
-  background-color: var(--base);
-}
-.white {
-  color: var(--white);
-}
-.bg-white {
-  background-color: var(--white);
-}
-.black {
-  color: var(--black);
-}
-.bg-black {
-  background-color: var(--black);
-}
-
